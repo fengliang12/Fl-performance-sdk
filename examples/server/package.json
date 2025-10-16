@@ -1,0 +1,25 @@
+{
+  "name": "performance-sdk-server",
+  "version": "1.0.0",
+  "description": "Simple Koa server for receiving performance SDK data",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js"
+  },
+  "dependencies": {
+    "koa": "^2.14.2",
+    "koa-bodyparser": "^4.4.1",
+    "koa-cors": "^0.0.16",
+    "koa-router": "^12.0.1"
+  },
+  "keywords": [
+    "koa",
+    "performance",
+    "sdk",
+    "server"
+  ],
+  "author": "Fl2025",
+  "license": "MIT"
+}

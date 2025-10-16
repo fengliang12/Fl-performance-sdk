@@ -1,0 +1,58 @@
+{
+  "name": "fl-performance-sdk",
+  "version": "1.0.0",
+  "description": "A performance monitoring SDK built with TypeScript and Microbundle",
+  "main": "dist/index.js",
+  "module": "dist/index.module.js",
+  "unpkg": "dist/index.umd.js",
+  "types": "dist/index.d.ts",
+  "source": "src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.module.js",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "microbundle",
+    "dev": "microbundle watch",
+    "test": "jest",
+    "lint": "eslint src --ext .ts,.tsx",
+    "lint:fix": "eslint src --ext .ts,.tsx --fix",
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run clean && npm run build"
+  },
+  "keywords": [
+    "performance",
+    "monitoring",
+    "sdk",
+    "typescript",
+    "microbundle"
+  ],
+  "author": "Fl2025",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^29.5.5",
+    "@typescript-eslint/eslint-plugin": "^6.7.2",
+    "@typescript-eslint/parser": "^6.7.2",
+    "eslint": "^8.49.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^30.2.0",
+    "microbundle": "^0.15.1",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Fl2025/Fl-performance-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Fl2025/Fl-performance-sdk/issues"
+  },
+  "homepage": "https://github.com/Fl2025/Fl-performance-sdk#readme"
+}

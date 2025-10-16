@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RRWeb 错误测试</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .test-section {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 8px 16px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        .log {
+            background: #f5f5f5;
+            padding: 10px;
+            margin: 10px 0;
+            font-family: monospace;
+            font-size: 12px;
+            max-height: 200px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>RRWeb 错误监控测试</h1>
+    <div class="test-section">
+        <h3>错误触发测试</h3>
+        <button onclick="triggerSyntaxError()">语法错误</button>
+        <button onclick="triggerReferenceError()">引用错误</button>
+        <button onclick="triggerPromiseError()">Promise错误</button>
+        <button onclick="triggerNetworkError()">网络错误</button>
+    </div>
+
+    <div class="test-section">
+        <h3>日志输出</h3>
+        <div id="logOutput" class="log">等待日志输出...</div>
+        <button onclick="clearLog()">清空日志</button>
+    </div>
+
+    <!-- 加载性能 SDK -->
+    <script type="module">
+        // 导入 Performance SDK
+        import PerformanceMonitorSdk from '../dist/index.module.js';
+
+        // 初始化 SDK，启用 RRWeb 录制
+        const sdk = new PerformanceMonitorSdk({
+            elementTiming: true,
+            resourceTiming: true,
+            logUrl: "http://localhost:3000/api/error",
+            captureError: true,
+            rrwebConfig: {
+                enabled: true,
+                maxDuration: 10, // 30秒录制时长
+                maxEvents: 300, // 最大事件数量
+                sampling: {
+                    scroll: 100,
+                    mousemove: 50,
+                    input: 100
+                }
+            }
+        });
+        // 将 SDK 实例暴露到全局，方便测试
+        window.performanceSDK = sdk;
+    </script>
+
+    <script>
+        // 日志输出函数
+        window.logToOutput = function (message) {
+            const logDiv = document.getElementById('logOutput');
+            const timestamp = new Date().toLocaleTimeString();
+            logDiv.innerHTML += `[${timestamp}] ${message}\n`;
+            logDiv.scrollTop = logDiv.scrollHeight;
+        };
+
+        // 重写 console.log 以显示在页面上
+        const originalLog = console.log;
+        console.log = function (...args) {
+            originalLog.apply(console, args);
+            window.logToOutput('📝 ' + args.join(' '));
+        };
+
+        function triggerSyntaxError() {
+            window.logToOutput('🔥 触发语法错误');
+            setTimeout(() => {
+                eval('var a = {');
+            }, 100);
+        }
+
+        function triggerReferenceError() {
+            window.logToOutput('🔥 触发引用错误');
+            setTimeout(() => {
+                nonExistentFunction();
+            }, 100);
+        }
+
+        function triggerPromiseError() {
+            window.logToOutput('🔥 触发 Promise 错误');
+            setTimeout(() => {
+                Promise.reject(new Error('测试 Promise 错误'));
+            }, 100);
+        }
+
+        function triggerNetworkError() {
+            window.logToOutput('🔥 触发网络错误');
+            const script = document.createElement('script');
+            script.src = 'https://non-existent-domain-12345.com/script.js';
+            document.head.appendChild(script);
+        }
+
+        function clearLog() {
+            document.getElementById('logOutput').innerHTML = '日志已清空...\n';
+        }
+
+        // 页面加载完成
+        window.addEventListener('load', () => {
+            window.logToOutput('📄 页面加载完成，SDK 已初始化');
+        });
+    </script>
+</body>
+
+</html>

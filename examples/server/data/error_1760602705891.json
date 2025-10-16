@@ -1,0 +1,70 @@
+{
+  "timestamp": "2025-10-16T08:18:25.891Z",
+  "type": "error",
+  "data": {
+    "scriptURI": "http://127.0.0.1:5500/dist/index.module.js",
+    "lineno": 1,
+    "colno": 9025,
+    "error": {},
+    "recording": {
+      "events": [
+        {
+          "type": 3,
+          "data": {
+            "source": 0,
+            "texts": [],
+            "attributes": [],
+            "removes": [
+              {
+                "parentId": 46,
+                "id": 70
+              }
+            ],
+            "adds": [
+              {
+                "parentId": 46,
+                "nextId": null,
+                "node": {
+                  "type": 3,
+                  "textContent": "等待日志输出...[16:18:12] 📝 ⏰ 性能收集开始\n[16:18:12] 📝 首字节时间 (TTFB) : 4\n[16:18:12] 📝 数据上报: [object Object]\n[16:18:12] 📝 FP 观察者已注册 [object Object]\n[16:18:12] 📝 数据上报logMetricObject: navigationTiming [object Object] \n[16:18:12] 📝 数据上报logMetricObject: networkInformation [object Object] \n[16:18:12] 📝 [ErrorMonitor] RRWeb 录制器初始化成功\n[16:18:12] 📝 资源加载详细时间信息: [object PerformanceResourceTiming]\n[16:18:12] 📝 数据上报logMetricObject: resourceTiming [object PerformanceResourceTiming] \n[16:18:12] 📝 资源加载详细时间信息: [object PerformanceResourceTiming]\n[16:18:12] 📝 数据上报logMetricObject: resourceTiming [object PerformanceResourceTiming] \n[16:18:12] 📝 数据上报logMetricObject: storageEstimate [object Object] \n[16:18:12] 📄 页面加载完成，SDK 已初始化\n[16:18:24] 📝 FPtime: 12688\n[16:18:24] 📝 数据上报: [object Object]\n",
+                  "id": 72
+                }
+              }
+            ]
+          },
+          "timestamp": 1760602704896
+        },
+        {
+          "type": 3,
+          "data": {
+            "source": 0,
+            "texts": [],
+            "attributes": [],
+            "removes": [
+              {
+                "parentId": 46,
+                "id": 72
+              }
+            ],
+            "adds": [
+              {
+                "parentId": 46,
+                "nextId": null,
+                "node": {
+                  "type": 3,
+                  "textContent": "等待日志输出...[16:18:12] 📝 ⏰ 性能收集开始\n[16:18:12] 📝 首字节时间 (TTFB) : 4\n[16:18:12] 📝 数据上报: [object Object]\n[16:18:12] 📝 FP 观察者已注册 [object Object]\n[16:18:12] 📝 数据上报logMetricObject: navigationTiming [object Object] \n[16:18:12] 📝 数据上报logMetricObject: networkInformation [object Object] \n[16:18:12] 📝 [ErrorMonitor] RRWeb 录制器初始化成功\n[16:18:12] 📝 资源加载详细时间信息: [object PerformanceResourceTiming]\n[16:18:12] 📝 数据上报logMetricObject: resourceTiming [object PerformanceResourceTiming] \n[16:18:12] 📝 资源加载详细时间信息: [object PerformanceResourceTiming]\n[16:18:12] 📝 数据上报logMetricObject: resourceTiming [object PerformanceResourceTiming] \n[16:18:12] 📝 数据上报logMetricObject: storageEstimate [object Object] \n[16:18:12] 📄 页面加载完成，SDK 已初始化\n[16:18:24] 📝 FPtime: 12688\n[16:18:24] 📝 数据上报: [object Object]\n[16:18:24] 📝 数据上报: [object Object]\n",
+                  "id": 73
+                }
+              }
+            ]
+          },
+          "timestamp": 1760602704896
+        }
+      ],
+      "startTime": 1760602704896,
+      "endTime": 1760602704896,
+      "duration": 0,
+      "compressed": false
+    }
+  }
+}

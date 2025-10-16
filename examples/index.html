@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        body {
+            background: yellowgreen;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app" elementtiming="elPageTitle">Hello</div>
+    <input id="js-btn-error" type="button" value="测试错误" />
+    <input id="js-btn-hide" type="button" value="隐藏页面" />
+    <div id="inserted-content" class="inserted-content"></div>
+    <input type="text" />
+    <!-- 先初始化 SDK，再加载可能产生错误的脚本 -->
+    <script type="module" src="./performance/index.js"></script>
+    <img id="js-img" src="./assets/test1.jpg" />
+    <script>
+        /**
+         * 测试错误点击事件
+         * 点击按钮后，会触发点击事件，弹出提示框
+        */
+        document.getElementById('js-btn-error').addEventListener('click', () => {
+            alert('测试', index);
+        });
+
+        /**
+         * 测试隐藏页面功能
+         * 点击按钮后，会在新标签页打开rrweb-test.html，当前页面会变为隐藏状态
+        */
+        document.getElementById('js-btn-hide').addEventListener('click', () => {
+            // 在新标签页打开rrweb-test页面，当前页面会变为隐藏状态
+            window.open('./rrweb-test.html', '_blank');
+        });
+
+        /**
+         * 测试CLS（ Cumulative Layout Shift ）
+         * 页面加载完成后，会在500ms后自动插入内容，确保没有用户输入
+        */
+        window.addEventListener('load', () => {
+            // 延迟2秒后自动插入内容，确保没有用户输入
+            setTimeout(() => {
+                const insertedContent = document.getElementById('inserted-content');
+                insertedContent.style.display = 'block';
+                insertedContent.innerHTML = '这是自动插入的内容';
+            }, 500);
+        });
+
+        // 脚本加载顺序 ：
+        // - demo2.js 在 HTML 中直接加载（第27行）
+        // - 而 SDK 初始化在 performance/index.js 中（第18行，type="module"）
+        // - 模块脚本（type="module"）是 延迟执行 的，会在所有普通脚本执行完毕后才执行
+
+        // setTimeout(() => {
+        //     // 动态加载错误测试脚本
+        //     const script1 = document.createElement('script');
+        //     script1.src = './error/demo1.js';
+        //     document.body.appendChild(script1);
+
+        //     const script2 = document.createElement('script');
+        //     script2.src = './error/demo2.js';
+        //     document.body.appendChild(script2);
+        // }, 100); // 给 SDK 初始化一些时间
+    </script>
+</body>
+
+</html>

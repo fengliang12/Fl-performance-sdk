@@ -1,0 +1,746 @@
+{
+  "timestamp": "2025-10-16T08:16:13.379Z",
+  "type": "error",
+  "data": {
+    "scriptURI": "http://127.0.0.1:5500/examples/rrweb-test.html",
+    "lineno": 1,
+    "colno": 10,
+    "error": {},
+    "recording": {
+      "events": [
+        {
+          "type": 4,
+          "data": {
+            "href": "http://127.0.0.1:5500/examples/rrweb-test.html",
+            "width": 1141,
+            "height": 1311
+          },
+          "timestamp": 1760602555292
+        },
+        {
+          "type": 2,
+          "data": {
+            "node": {
+              "type": 0,
+              "childNodes": [
+                {
+                  "type": 1,
+                  "name": "html",
+                  "publicId": "",
+                  "systemId": "",
+                  "id": 2
+                },
+                {
+                  "type": 2,
+                  "tagName": "html",
+                  "attributes": {
+                    "lang": "zh-CN"
+                  },
+                  "childNodes": [
+                    {
+                      "type": 2,
+                      "tagName": "head",
+                      "attributes": {},
+                      "childNodes": [
+                        {
+                          "type": 3,
+                          "textContent": "\n    ",
+                          "id": 5
+                        },
+                        {
+                          "type": 2,
+                          "tagName": "meta",
+                          "attributes": {
+                            "charset": "UTF-8"
+                          },
+                          "childNodes": [],
+                          "id": 6
+                        },
+                        {
+                          "type": 3,
+                          "textContent": "\n    ",
+                          "id": 7
+                        },
+                        {
+                          "type": 2,
+                          "tagName": "meta",
+                          "attributes": {
+                            "name": "viewport",
+                            "content": "width=device-width, initial-scale=1.0"
+                          },
+                          "childNodes": [],
+                          "id": 8
+                        },
+                        {
+                          "type": 3,
+                          "textContent": "\n    ",
+                          "id": 9
+                        },
+                        {
+                          "type": 2,
+                          "tagName": "title",
+                          "attributes": {},
+                          "childNodes": [
+                            {
+                              "type": 3,
+                              "textContent": "RRWeb 错误测试",
+                              "id": 11
+                            }
+                          ],
+                          "id": 10
+                        },
+                        {
+                          "type": 3,
+                          "textContent": "\n    ",
+                          "id": 12
+                        },
+                        {
+                          "type": 2,
+                          "tagName": "style",
+                          "attributes": {},
+                          "childNodes": [
+                            {
+                              "type": 3,
+                              "textContent": "body { font-family: Arial, sans-serif; margin: 20px; padding: 0px; }h1 { text-align: center; }.test-section { margin: 20px 0px; padding: 15px; border: 1px solid rgb(204, 204, 204); }button { padding: 8px 16px; margin: 5px; cursor: pointer; }.log { background: rgb(245, 245, 245); padding: 10px; margin: 10px 0px; font-family: monospace; font-size: 12px; max-height: 200px; overflow-y: auto; border: 1px solid rgb(204, 204, 204); }",
+                              "isStyle": true,
+                              "id": 14
+                            }
+                          ],
+                          "id": 13
+                        },
+                        {
+                          "type": 3,
+                          "textContent": "\n",
+                          "id": 15
+                        },
+                        {
+                          "type": 2,
+                          "tagName": "script",
+                          "attributes": {
+                            "src": "https://cdn.jsdelivr.net/npm/rrweb@latest/dist/rrweb.min.js"
+                          },
+                          "childNodes": [],
+                          "id": 16
+                        }
+                      ],
+                      "id": 4
+                    },
+                    {
+                      "type": 3,
+                      "textContent": "\n\n",
+                      "id": 17
+                    },
+                    {
+                      "type": 2,
+                      "tagName": "body",
+                      "attributes": {},
+                      "childNodes": [
+                        {
+                          "type": 3,
+                          "textContent": "\n    ",
+                          "id": 19
+                        },
+                        {
+                          "type": 2,
+                          "tagName": "h1",
+                          "attributes": {},
+                          "childNodes": [
+                            {
+                              "type": 3,
+                              "textContent": "RRWeb 错误监控测试",
+                              "id": 21
+                            }
+                          ],
+                          "id": 20
+                        },
+                        {
+                          "type": 3,
+                          "textContent": "\n    ",
+                          "id": 22
+                        },
+                        {
+                          "type": 2,
+                          "tagName": "div",
+                          "attributes": {
+                            "class": "test-section"
+                          },
+                          "childNodes": [
+                            {
+                              "type": 3,
+                              "textContent": "\n        ",
+                              "id": 24
+                            },
+                            {
+                              "type": 2,
+                              "tagName": "h3",
+                              "attributes": {},
+                              "childNodes": [
+                                {
+                                  "type": 3,
+                                  "textContent": "错误触发测试",
+                                  "id": 26
+                                }
+                              ],
+                              "id": 25
+                            },
+                            {
+                              "type": 3,
+                              "textContent": "\n        ",
+                              "id": 27
+                            },
+                            {
+                              "type": 2,
+                              "tagName": "button",
+                              "attributes": {
+                                "onclick": "triggerSyntaxError()"
+                              },
+                              "childNodes": [
+                                {
+                                  "type": 3,
+                                  "textContent": "语法错误",
+                                  "id": 29
+                                }
+                              ],
+                              "id": 28
+                            },
+                            {
+                              "type": 3,
+                              "textContent": "\n        ",
+                              "id": 30
+                            },
+                            {
+                              "type": 2,
+                              "tagName": "button",
+                              "attributes": {
+                                "onclick": "triggerReferenceError()"
+                              },
+                              "childNodes": [
+                                {
+                                  "type": 3,
+                                  "textContent": "引用错误",
+                                  "id": 32
+                                }
+                              ],
+                              "id": 31
+                            },
+                            {
+                              "type": 3,
+                              "textContent": "\n        ",
+                              "id": 33
+                            },
+                            {
+                              "type": 2,
+                              "tagName": "button",
+                              "attributes": {
+                                "onclick": "triggerPromiseError()"
+                              },
+                              "childNodes": [
+                                {
+                                  "type": 3,
+                                  "textContent": "Promise错误",
+                                  "id": 35
+                                }
+                              ],
+                              "id": 34
+                            },
+                            {
+                              "type": 3,
+                              "textContent": "\n        ",
+                              "id": 36
+                            },
+                            {
+                              "type": 2,
+                              "tagName": "button",
+                              "attributes": {
+                                "onclick": "triggerNetworkError()"
+                              },
+                              "childNodes": [
+                                {
+                                  "type": 3,
+                                  "textContent": "网络错误",
+                                  "id": 38
+                                }
+                              ],
+                              "id": 37
+                            },
+                            {
+                              "type": 3,
+                              "textContent": "\n    ",
+                              "id": 39
+                            }
+                          ],
+                          "id": 23
+                        },
+                        {
+                          "type": 3,
+                          "textContent": "\n\n    ",
+                          "id": 40
+                        },
+                        {
+                          "type": 2,
+                          "tagName": "div",
+                          "attributes": {
+                            "class": "test-section"
+                          },
+                          "childNodes": [
+                            {
+                              "type": 3,
+                              "textContent": "\n        ",
+                              "id": 42
+                            },
+                            {
+                              "type": 2,
+                              "tagName": "h3",
+                              "attributes": {},
+                              "childNodes": [
+                                {
+                                  "type": 3,
+                                  "textContent": "日志输出",
+                                  "id": 44
+                                }
+                              ],
+                              "id": 43
+                            },
+                            {
+                              "type": 3,
+                              "textContent": "\n        ",
+                              "id": 45
+                            },
+                            {
+                              "type": 2,
+                              "tagName": "div",
+                              "attributes": {
+                                "id": "logOutput",
+                                "class": "log"
+                              },
+                              "childNodes": [
+                                {
+                                  "type": 3,
+                                  "textContent": "等待日志输出...",
+                                  "id": 47
+                                }
+                              ],
+                              "id": 46
+                            },
+                            {
+                              "type": 3,
+                              "textContent": "\n        ",
+                              "id": 48
+                            },
+                            {
+                              "type": 2,
+                              "tagName": "button",
+                              "attributes": {
+                                "onclick": "clearLog()"
+                              },
+                              "childNodes": [
+                                {
+                                  "type": 3,
+                                  "textContent": "清空日志",
+                                  "id": 50
+                                }
+                              ],
+                              "id": 49
+                            },
+                            {
+                              "type": 3,
+                              "textContent": "\n    ",
+                              "id": 51
+                            }
+                          ],
+                          "id": 41
+                        },
+                        {
+                          "type": 3,
+                          "textContent": "\n\n    ",
+                          "id": 52
+                        },
+                        {
+                          "type": 5,
+                          "textContent": " 加载性能 SDK ",
+                          "id": 53
+                        },
+                        {
+                          "type": 3,
+                          "textContent": "\n    ",
+                          "id": 54
+                        },
+                        {
+                          "type": 2,
+                          "tagName": "script",
+                          "attributes": {
+                            "type": "module"
+                          },
+                          "childNodes": [
+                            {
+                              "type": 3,
+                              "textContent": "SCRIPT_PLACEHOLDER",
+                              "id": 56
+                            }
+                          ],
+                          "id": 55
+                        },
+                        {
+                          "type": 3,
+                          "textContent": "\n\n    ",
+                          "id": 57
+                        },
+                        {
+                          "type": 2,
+                          "tagName": "script",
+                          "attributes": {},
+                          "childNodes": [
+                            {
+                              "type": 3,
+                              "textContent": "SCRIPT_PLACEHOLDER",
+                              "id": 59
+                            }
+                          ],
+                          "id": 58
+                        },
+                        {
+                          "type": 3,
+                          "textContent": "\n",
+                          "id": 60
+                        },
+                        {
+                          "type": 5,
+                          "textContent": " Code injected by live-server ",
+                          "id": 61
+                        },
+                        {
+                          "type": 3,
+                          "textContent": "\n",
+                          "id": 62
+                        },
+                        {
+                          "type": 2,
+                          "tagName": "script",
+                          "attributes": {},
+                          "childNodes": [
+                            {
+                              "type": 3,
+                              "textContent": "SCRIPT_PLACEHOLDER",
+                              "id": 64
+                            }
+                          ],
+                          "id": 63
+                        },
+                        {
+                          "type": 3,
+                          "textContent": "\n\n\n",
+                          "id": 65
+                        }
+                      ],
+                      "id": 18
+                    }
+                  ],
+                  "id": 3
+                }
+              ],
+              "id": 1
+            },
+            "initialOffset": {
+              "left": 0,
+              "top": 0
+            }
+          },
+          "timestamp": 1760602555293
+        },
+        {
+          "type": 3,
+          "data": {
+            "source": 0,
+            "texts": [],
+            "attributes": [],
+            "removes": [
+              {
+                "parentId": 46,
+                "id": 47
+              }
+            ],
+            "adds": [
+              {
+                "parentId": 46,
+                "nextId": null,
+                "node": {
+                  "type": 3,
+                  "textContent": "等待日志输出...[16:15:55] 📝 [ErrorMonitor] RRWeb 录制器初始化成功\n",
+                  "id": 66
+                }
+              }
+            ]
+          },
+          "timestamp": 1760602555294
+        },
+        {
+          "type": 3,
+          "data": {
+            "source": 0,
+            "texts": [],
+            "attributes": [],
+            "removes": [],
+            "adds": [
+              {
+                "parentId": 4,
+                "nextId": 5,
+                "node": {
+                  "type": 2,
+                  "tagName": "meta",
+                  "attributes": {
+                    "name": "emotion-insertion-point",
+                    "content": ""
+                  },
+                  "childNodes": [],
+                  "id": 67
+                }
+              }
+            ]
+          },
+          "timestamp": 1760602555449
+        },
+        {
+          "type": 3,
+          "data": {
+            "source": 0,
+            "texts": [],
+            "attributes": [],
+            "removes": [
+              {
+                "parentId": 46,
+                "id": 66
+              }
+            ],
+            "adds": [
+              {
+                "parentId": 46,
+                "nextId": null,
+                "node": {
+                  "type": 3,
+                  "textContent": "等待日志输出...[16:15:55] 📝 [ErrorMonitor] RRWeb 录制器初始化成功\n[16:15:55] 📄 页面加载完成，SDK 已初始化\n",
+                  "id": 68
+                }
+              }
+            ]
+          },
+          "timestamp": 1760602555505
+        },
+        {
+          "type": 3,
+          "data": {
+            "source": 0,
+            "texts": [],
+            "attributes": [],
+            "removes": [],
+            "adds": [
+              {
+                "parentId": 3,
+                "nextId": null,
+                "node": {
+                  "type": 2,
+                  "tagName": "div",
+                  "attributes": {
+                    "id": "saladict",
+                    "style": "font-size: 0px; width: 0px; height: 0px;"
+                  },
+                  "childNodes": [],
+                  "id": 69
+                }
+              }
+            ]
+          },
+          "timestamp": 1760602555522
+        },
+        {
+          "type": 3,
+          "data": {
+            "source": 1,
+            "positions": [
+              {
+                "x": 634,
+                "y": 1291,
+                "id": 3,
+                "timeOffset": 0
+              }
+            ]
+          },
+          "timestamp": 1760602572039
+        },
+        {
+          "type": 3,
+          "data": {
+            "source": 1,
+            "positions": [
+              {
+                "x": 747,
+                "y": 679,
+                "id": 3,
+                "timeOffset": -449
+              },
+              {
+                "x": 757,
+                "y": 487,
+                "id": 3,
+                "timeOffset": -392
+              },
+              {
+                "x": 441,
+                "y": 439,
+                "id": 41,
+                "timeOffset": -334
+              },
+              {
+                "x": 111,
+                "y": 439,
+                "id": 41,
+                "timeOffset": -284
+              },
+              {
+                "x": 32,
+                "y": 434,
+                "id": 41,
+                "timeOffset": -232
+              },
+              {
+                "x": 23,
+                "y": 380,
+                "id": 41,
+                "timeOffset": -180
+              },
+              {
+                "x": 23,
+                "y": 335,
+                "id": 41,
+                "timeOffset": -123
+              },
+              {
+                "x": 21,
+                "y": 307,
+                "id": 41,
+                "timeOffset": -66
+              },
+              {
+                "x": 24,
+                "y": 235,
+                "id": 18,
+                "timeOffset": -8
+              }
+            ]
+          },
+          "timestamp": 1760602572540
+        },
+        {
+          "type": 3,
+          "data": {
+            "source": 1,
+            "positions": [
+              {
+                "x": 28,
+                "y": 221,
+                "id": 23,
+                "timeOffset": -461
+              },
+              {
+                "x": 31,
+                "y": 220,
+                "id": 23,
+                "timeOffset": -402
+              },
+              {
+                "x": 39,
+                "y": 216,
+                "id": 23,
+                "timeOffset": -348
+              },
+              {
+                "x": 60,
+                "y": 205,
+                "id": 28,
+                "timeOffset": -291
+              },
+              {
+                "x": 65,
+                "y": 204,
+                "id": 28,
+                "timeOffset": -241
+              }
+            ]
+          },
+          "timestamp": 1760602573042
+        },
+        {
+          "type": 3,
+          "data": {
+            "source": 2,
+            "type": 1,
+            "id": 28,
+            "x": 65,
+            "y": 204
+          },
+          "timestamp": 1760602573263
+        },
+        {
+          "type": 3,
+          "data": {
+            "source": 2,
+            "type": 5,
+            "id": 28
+          },
+          "timestamp": 1760602573264
+        },
+        {
+          "type": 3,
+          "data": {
+            "source": 2,
+            "type": 0,
+            "id": 28,
+            "x": 65,
+            "y": 204
+          },
+          "timestamp": 1760602573267
+        },
+        {
+          "type": 3,
+          "data": {
+            "source": 2,
+            "type": 2,
+            "id": 28,
+            "x": 65,
+            "y": 204
+          },
+          "timestamp": 1760602573267
+        },
+        {
+          "type": 3,
+          "data": {
+            "source": 0,
+            "texts": [],
+            "attributes": [],
+            "removes": [
+              {
+                "parentId": 46,
+                "id": 68
+              }
+            ],
+            "adds": [
+              {
+                "parentId": 46,
+                "nextId": null,
+                "node": {
+                  "type": 3,
+                  "textContent": "等待日志输出...[16:15:55] 📝 [ErrorMonitor] RRWeb 录制器初始化成功\n[16:15:55] 📄 页面加载完成，SDK 已初始化\n[16:16:13] 🔥 触发语法错误\n",
+                  "id": 70
+                }
+              }
+            ]
+          },
+          "timestamp": 1760602573268
+        }
+      ],
+      "startTime": 1760602555292,
+      "endTime": 1760602573268,
+      "duration": 17976,
+      "compressed": false
+    }
+  }
+}
