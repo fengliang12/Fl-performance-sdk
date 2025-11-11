@@ -8,6 +8,8 @@ interface IOptions {
     maxMeasureTime?: number;
     logUrl?: string;
     rrwebConfig?: Partial<IRRWebConfig>;
+    transport?: "beacon" | "fetch" | "image";
+    batchInterval?: number;
 }
 export default class PerformanceMonitorSdk {
     /** SDK版本号 */

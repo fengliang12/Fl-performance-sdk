@@ -4,10 +4,10 @@ import PerformanceSdk from "../../dist/index.module.js";
 console.log("Performance SDK Example Starting...");
 
 const sdk = new PerformanceSdk({
-  elementTiming: true,
-  resourceTiming: true,
+  elementTiming: true, // 开启元素性能监控
+  resourceTiming: true, // 开启资源性能监控
   logUrl: "http://123.com/test",
-  captureError: true,
+  captureError: true, // 开启错误监控
 });
 
 console.log("🐻 Performance SDK initialized:", sdk);

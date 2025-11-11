@@ -202,3 +202,70 @@ export interface INavigatorInfo {
   isLowEndExperience?: boolean;
   serviceWorkerStatus?: "controlled" | "supported" | "unsupported";
 }
+
+/**
+ * 兼容导出的错误信息类型别名
+ * 与 core 模块中使用的 ErrorInfo 命名保持一致
+ */
+export type ErrorInfo = IErrorInfo;
+
+/** 性能监控核心配置 */
+export interface PerformanceConfig {
+  appId?: string;
+  apiEndpoint?: string;
+  autoCollect?: boolean;
+  sampleRate?: number;
+  debug?: boolean;
+}
+
+/** 指标类型 */
+export type MetricType = "gauge" | "counter" | "timing";
+
+/**
+ * 性能指标结构定义
+ */
+export interface PerformanceMetric {
+  name: string;
+  value: number;
+  timestamp: number;
+  type: MetricType;
+  tags?: Record<string, string>;
+}
+
+/**
+ * 导航时序结构定义
+ */
+export interface NavigationTiming {
+  dnsLookup: number;
+  tcpConnect: number;
+  request: number;
+  response: number;
+  domParse: number;
+  resourceLoad: number;
+  firstContentfulPaint?: number;
+  largestContentfulPaint?: number;
+}
+
+/**
+ * 资源加载时序结构定义
+ */
+export interface ResourceTiming {
+  name: string;
+  type: string;
+  startTime: number;
+  duration: number;
+  transferSize: number;
+}
+
+/** 用户行为类型 */
+export type UserActionType = "click" | "scroll";
+
+/**
+ * 用户行为结构定义
+ */
+export interface UserAction {
+  type: UserActionType;
+  target?: string;
+  timestamp: number;
+  data?: Record<string, any>;
+}

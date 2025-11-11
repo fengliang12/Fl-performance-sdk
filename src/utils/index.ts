@@ -11,7 +11,10 @@ export function generateId(): string {
  * 获取当前时间戳
  */
 export function now(): number {
-  return performance.now ? performance.now() : Date.now();
+  return typeof performance !== "undefined" &&
+    typeof performance.now === "function"
+    ? performance.now()
+    : Date.now();
 }
 
 /**
@@ -22,7 +25,7 @@ export function debounce<T extends (...args: any[]) => any>(
   wait: number
 ): (...args: Parameters<T>) => void {
   let timeout: number;
-  return function(this: any, ...args: Parameters<T>) {
+  return function (this: any, ...args: Parameters<T>) {
     clearTimeout(timeout);
     timeout = setTimeout(() => func.apply(this, args), wait) as any;
   };
@@ -36,7 +39,7 @@ export function throttle<T extends (...args: any[]) => any>(
   limit: number
 ): (...args: Parameters<T>) => void {
   let inThrottle: boolean;
-  return function(this: any, ...args: Parameters<T>) {
+  return function (this: any, ...args: Parameters<T>) {
     if (!inThrottle) {
       func.apply(this, args);
       inThrottle = true;
@@ -49,7 +52,7 @@ export function throttle<T extends (...args: any[]) => any>(
  * 检查是否为浏览器环境
  */
 export function isBrowser(): boolean {
-  return typeof window !== 'undefined' && typeof document !== 'undefined';
+  return typeof window !== "undefined" && typeof document !== "undefined";
 }
 
 /**
@@ -71,18 +74,18 @@ export function deepMerge<T extends Record<string, any>>(
   source: Partial<T>
 ): T {
   const result = { ...target };
-  
+
   for (const key in source) {
     if (source.hasOwnProperty(key)) {
       const sourceValue = source[key];
       const targetValue = result[key];
-      
+
       if (
         sourceValue &&
-        typeof sourceValue === 'object' &&
+        typeof sourceValue === "object" &&
         !Array.isArray(sourceValue) &&
         targetValue &&
-        typeof targetValue === 'object' &&
+        typeof targetValue === "object" &&
         !Array.isArray(targetValue)
       ) {
         result[key] = deepMerge(targetValue, sourceValue);
@@ -91,6 +94,6 @@ export function deepMerge<T extends Record<string, any>>(
       }
     }
   }
-  
+
   return result;
 }

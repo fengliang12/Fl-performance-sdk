@@ -25,20 +25,24 @@ interface Navigator {
 }
 
 // 全局对象引用，提供便捷访问
-/** 全局 window 对象引用 */
-export const W = window;
+/** 全局 window 对象引用（SSR 兼容） */
+export const W: Window & typeof globalThis =
+  typeof window !== "undefined" ? (window as any) : (globalThis as any);
 
-/** 全局 console 对象引用，用于日志输出 */
-export const C = W.console;
+/** 全局 console 对象引用，用于日志输出（SSR 兼容） */
+export const C: Console = typeof console !== "undefined" ? console : ({} as Console);
 
-/** 全局 document 对象引用，用于DOM操作 */
-export const D = document;
+/** 全局 document 对象引用，用于DOM操作（SSR 兼容） */
+export const D: Document =
+  typeof document !== "undefined" ? (document as any) : ({} as Document);
 
-/** 全局 navigator 对象引用，类型转换为扩展的 Navigator 接口 */
-export const WN = W.navigator as unknown as Navigator;
+/** 全局 navigator 对象引用，类型转换为扩展的 Navigator 接口（SSR 兼容） */
+export const WN: Navigator =
+  typeof navigator !== "undefined" ? (navigator as any as Navigator) : ({} as Navigator);
 
-/** 全局 performance 对象引用，用于性能监控 */
-export const WP = W.performance;
+/** 全局 performance 对象引用，用于性能监控（SSR 兼容） */
+export const WP: Performance =
+  typeof performance !== "undefined" ? (performance as any) : ({} as Performance);
 
 /**
  * 获取设备内存大小

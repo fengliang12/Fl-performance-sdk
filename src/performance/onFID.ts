@@ -12,7 +12,7 @@ const onFID = (list: PerformanceEventTiming[]) => {
 
     if (lastEntry) {
       // Core Web Vitals FID 逻辑
-      // 测量输入事件的延迟操作：从是用户首次交互的时间戳 - 事件开始时间
+      // 测量输入事件的延迟操作：用户首次交互的时间戳 - 事件开始时间
       // 这是衡量页面响应性的关键指标
       logMetric({
         duration: lastEntry.processingStart - lastEntry.startTime,

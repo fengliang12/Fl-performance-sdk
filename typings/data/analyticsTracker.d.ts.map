@@ -1,1 +1,1 @@
-{"version":3,"file":"analyticsTracker.d.ts","sourceRoot":"","sources":["../../src/data/analyticsTracker.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,wBAAwB,EAAE,MAAM,UAAU,CAAC;AACpD,QAAA,MAAM,gBAAgB,GAAI,SAAS,wBAAwB,KAAG,IAS7D,CAAC;AACF,eAAe,gBAAgB,CAAC"}
+{"version":3,"file":"analyticsTracker.d.ts","sourceRoot":"","sources":["../../src/data/analyticsTracker.ts"],"names":[],"mappings":"AACA,OAAO,EAAe,wBAAwB,EAAE,MAAM,UAAU,CAAC;AAEjE;;;GAGG;AACH,QAAA,MAAM,gBAAgB,GAAI,SAAS,wBAAwB,KAAG,IA8B7D,CAAC;AAEF,eAAe,gBAAgB,CAAC"}

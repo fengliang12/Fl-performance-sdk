@@ -30,6 +30,10 @@ interface IOptions {
   logUrl?: string;
   // RRWeb 配置
   rrwebConfig?: Partial<IRRWebConfig>;
+  // 传输方式（调试可用 fetch，默认 beacon）
+  transport?: "beacon" | "fetch" | "image";
+  // 批量上报的时间窗口（毫秒）
+  batchInterval?: number;
 }
 
 export default class PerformanceMonitorSdk {
@@ -53,7 +57,11 @@ export default class PerformanceMonitorSdk {
     this.options = options;
 
     //初始化数据上报实例，用于向后台输送监控数据
-    this.reportData = new ReportData({ logUrl });
+    this.reportData = new ReportData({
+      logUrl,
+      transport: options.transport,
+      batchInterval: options.batchInterval,
+    });
     config.reportData = this.reportData;
 
     // 配置数据分析追踪器

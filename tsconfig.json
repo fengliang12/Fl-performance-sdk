@@ -8,11 +8,12 @@
     "noImplicitAny": true,
     "noImplicitThis": true,
     "moduleResolution": "node",
+    "skipLibCheck": true,
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "declarationDir": "./typings"
   },
   "include": ["./src/**/*"],
-  "exclude": ["node_modules", "dist", "**/*.spec.ts"]
+  "exclude": ["node_modules", "dist", "**/*.spec.ts", "src/core/**"]
 }

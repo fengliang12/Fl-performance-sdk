@@ -23,15 +23,15 @@ interface Navigator {
     /** 发送信标数据的方法 */
     sendBeacon?: any;
 }
-/** 全局 window 对象引用 */
+/** 全局 window 对象引用（SSR 兼容） */
 export declare const W: Window & typeof globalThis;
-/** 全局 console 对象引用，用于日志输出 */
+/** 全局 console 对象引用，用于日志输出（SSR 兼容） */
 export declare const C: Console;
-/** 全局 document 对象引用，用于DOM操作 */
+/** 全局 document 对象引用，用于DOM操作（SSR 兼容） */
 export declare const D: Document;
-/** 全局 navigator 对象引用，类型转换为扩展的 Navigator 接口 */
+/** 全局 navigator 对象引用，类型转换为扩展的 Navigator 接口（SSR 兼容） */
 export declare const WN: Navigator;
-/** 全局 performance 对象引用，用于性能监控 */
+/** 全局 performance 对象引用，用于性能监控（SSR 兼容） */
 export declare const WP: Performance;
 /**
  * 获取设备内存大小
